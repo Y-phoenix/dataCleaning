@@ -4,6 +4,7 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import org.bson.types.ObjectId;
 import common.MongoDAOUtil;
 import common.RangeBean;
 
@@ -34,8 +35,8 @@ public class DeleteSnapshots {
         Boolean mongoInitialized = initMongo();
         if(mongoInitialized){
             try{
-                //readFile();
-                executingDataCleaning();
+                readFile();
+                //executingDataCleaning();
             }catch (Exception e)
             {
                 e.printStackTrace();
@@ -93,53 +94,65 @@ public class DeleteSnapshots {
         for(RangeBean range : ranges){
             List<List<Long>> subList = global.subList(range.getIni(),range.getEnd());
             if(subList!=null) {
-                RunnableDeleteSnapshot runnable = new RunnableDeleteSnapshot(subList);
-                executor.execute(runnable);
+                //RunnableDeleteSnapshot runnable = new RunnableDeleteSnapshot(subList);
+                //executor.execute(runnable);
             }
         }
     }
 
-    private static List<RangeBean> getRanges(List<List<Long>> global){
-        int count  = global.size()/numTransaction;
-        int ini = 0;
-        int end = 0;
-        boolean rest = false;
+    private static List<RangeBean> getRanges(List<List<Long>> global)
+    {
         List<RangeBean> ranges = new ArrayList<>();
-        for (int i = 1; i <= count ; i++) {
-            RangeBean range = new RangeBean(ini,end);
-            ranges.add(range);
-            ini = ini+numTransaction;
-            end = end+numTransaction;
-            if(end>global.size()){
-                end = (global.size()-(end-numTransaction))+(end-numTransaction);
-                rest = true;
+        if( global.size() < numTransaction){
+            int count  = global.size()/numTransaction;
+            int ini = 0;
+            int end = 0;
+            boolean rest = false;
+            for (int i = 1; i <= count ; i++) {
+                RangeBean range = new RangeBean(ini,end);
+                ranges.add(range);
+                ini = ini+numTransaction;
+                end = end+numTransaction;
+                if(end>global.size()){
+                    end = (global.size()-(end-numTransaction))+(end-numTransaction);
+                    rest = true;
+                }
             }
-        }
-        if(rest)
-        {
-            RangeBean range = new RangeBean(ini,end);
+            if(rest)
+            {
+                RangeBean range = new RangeBean(ini,end);
+                ranges.add(range);
+            }
+        }else{
+            RangeBean range = new RangeBean(1,global.size());
             ranges.add(range);
         }
+
         return ranges;
     }
     private static void readFile() throws Exception
     {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("/home/rchirinos/Documents/testData.txt"));
+            br = new BufferedReader(new FileReader("/home/rchirinos/Documents/ini_ruth/Documents/Mojix/QueriesMongoNLevel/output.txt"));
 
             List<String> stringDelete = new ArrayList<>();
+            List<String> stringUpdate = new ArrayList<>();
             String line = br.readLine();
             while (line != null) {
-                if(line.contains("D-")||line.contains("U-")){
+                if(line.contains("D-")){
                     line = line.replace("D-","");
-                    line = line.replace("U-","");
                     stringDelete.add(line);
+                }else if(line.contains("U-"))
+                {
+                    line = line.replace("U-","");
+                    stringUpdate.add(line);
                 }
                 line = br.readLine();
             }
             DeleteSnapshots data = new DeleteSnapshots();
             data.removeSnapshots(stringDelete);
+            data.updateSnapshots(stringUpdate);
 
         } finally {
             if(br!=null)
@@ -150,70 +163,84 @@ public class DeleteSnapshots {
     }
 
     public void removeSnapshots(List<String> stringDelete) {
-        ExecutorService executor = Executors.newFixedThreadPool(nThreads);
-        int count  = stringDelete.size()/numTransaction;
-        int ini = 1;
-        int end = numTransaction;
-        boolean rest = false;
-        List<RangeBean> ranges = new ArrayList<>();
-        for (int i = 1; i <= count ; i++) {
-            RangeBean range = new RangeBean(ini,end);
-            ranges.add(range);
-            ini = ini+numTransaction;
-            end = end+numTransaction;
-            if(end>stringDelete.size()){
-                end = (stringDelete.size()-(end-numTransaction))+(end-numTransaction);
-                rest = true;
-            }
-        }
-        if(rest)
-        {
-            RangeBean range = new RangeBean(ini,end);
-            ranges.add(range);
-        }
-
-        for(RangeBean range : ranges){
-            List<String> subList = stringDelete.subList(range.getIni(),range.getEnd());
-            List<List<Long>> longValues = new ArrayList<>();
-            for(String data : subList){
-                String[] split = data.split(",");
-                List<Long> longData = new ArrayList<>();
-                for (int i = 0; i < split.length; i++) {
-                    Long id = Long.parseLong(split[i]);
-                    longData.add(id);
+        //Divide in ranges
+        List<RangeBean> ranges = getRangesString(stringDelete);
+        if(ranges!=null){
+            ExecutorService executor = Executors.newFixedThreadPool(nThreads);
+            for(RangeBean range : ranges)
+            {
+                List<String> subList = stringDelete.subList(range.getIni(),range.getEnd());
+                List<List<ObjectId>> longValues = new ArrayList<>();
+                for(String data : subList){
+                    String[] split = data.split(",");
+                    List<ObjectId> lstObjectData = new ArrayList<>();
+                    for (int i = 0; i < split.length; i++) {
+                        ObjectId id = new ObjectId(split[i]);
+                        lstObjectData.add(id);
+                    }
+                    longValues.add(lstObjectData);
                 }
-                longValues.add(longData);
-            }
-            if(longValues!=null) {
-                RunnableDeleteSnapshot runnable = new RunnableDeleteSnapshot(longValues);
-                executor.execute(runnable);
+                System.out.println(longValues);
+
+                if(longValues!=null) {
+                    RunnableDeleteSnapshot runnable = new RunnableDeleteSnapshot(longValues);
+                    executor.execute(runnable);
+                }
             }
         }
     }
 
-    public class RunnableDeleteSnapshot implements Runnable {
-        List<List<Long>> lstThings;
-
-        public RunnableDeleteSnapshot(List<List<Long>> container) {
-            this.lstThings = new ArrayList<>(container.size());
-            for(List<Long> longItems: container) {
-                List<Long> ids = new ArrayList<>();
-                for(Long data :longItems){
-                    ids.add(data);
+    public void updateSnapshots(List<String> stringUpdate) {
+        //Divide in ranges
+        List<RangeBean> ranges = getRangesString(stringUpdate);
+        if(ranges!=null){
+            ExecutorService executor = Executors.newFixedThreadPool(nThreads);
+            for(RangeBean range : ranges)
+            {
+                List<String> subList = stringUpdate.subList(range.getIni(),range.getEnd());
+                if(subList!=null && subList.size()>0)
+                {
+                    RunnableUpdateSnapshot runnable = new RunnableUpdateSnapshot(subList);
+                    executor.execute(runnable);
                 }
-                lstThings.add(ids);
             }
         }
+    }
 
-        @Override
-        public void run() {
-            for (List<Long> ids: lstThings){
-                //System.out.println("chico "+ids);
-                BasicDBObject query = new BasicDBObject("_id",new BasicDBObject("$in",ids));
-                System.out.println(query);
-                //MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTS).remove(query);
+    public static List<RangeBean> getRangesString(List<String> lst){
+        List<RangeBean> ranges = new ArrayList<>();
+        if(lst.size()>=numTransaction){
+            int count  = lst.size()/numTransaction;
+            int ini = 0;
+            int end = 0;
+            if(count==0){
+                count = 1;
+                end = lst.size();
+            }else{
+                end = numTransaction;
             }
+
+            boolean rest = false;
+            for (int i = 1; i <= count ; i++) {
+                RangeBean range = new RangeBean(ini,end);
+                ranges.add(range);
+                ini = ini+numTransaction;
+                end = end+numTransaction;
+                if(end>lst.size()){
+                    end = (lst.size()-(end-numTransaction))+(end-numTransaction);
+                    rest = true;
+                }
+            }
+            if(rest)
+            {
+                RangeBean range = new RangeBean(ini,end);
+                ranges.add(range);
+            }
+        }else{
+            RangeBean range = new RangeBean(0,lst.size());
+            ranges.add(range);
         }
+        return ranges;
     }
 
     private static Boolean initMongo() {
@@ -226,5 +253,60 @@ public class DeleteSnapshots {
         return false;
     }
 
+    public class RunnableDeleteSnapshot implements Runnable {
+        List<List<ObjectId>> lstThings;
 
+        public RunnableDeleteSnapshot(List<List<ObjectId>> container) {
+            this.lstThings = new ArrayList<>(container.size());
+            for(List<ObjectId> lstObjectData: container) {
+                List<ObjectId> ids = new ArrayList<>();
+                for(ObjectId data :lstObjectData){
+                    ids.add(data);
+                }
+                lstThings.add(ids);
+            }
+        }
+
+        @Override
+        public void run() {
+            for (List<ObjectId> ids: lstThings){
+                //System.out.println("chico "+ids);
+                BasicDBObject query = new BasicDBObject("_id",new BasicDBObject("$in",ids));
+                System.out.println(query);
+                //MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTS).remove(query);
+            }
+        }
+    }
+
+    public class RunnableUpdateSnapshot implements Runnable {
+        private List<Long> lstThings;
+        private long timestampDate =0l;
+
+        public RunnableUpdateSnapshot(List<String> container) {
+            this.lstThings = new ArrayList<>(container.size());
+            for(String lstObjectData: container) {
+                lstThings.add(Long.parseLong(lstObjectData));
+            }
+            try{
+                DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = formatter.parse(DATE_STRING);
+                timestampDate = date.getTime();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
+
+        @Override
+        public void run() {
+            //System.out.println("chico "+ids);
+            BasicDBObject query = new BasicDBObject("_id",new BasicDBObject("$in",lstThings));
+            BasicDBObject condition = new BasicDBObject("$pull",
+                    new BasicDBObject("blinks",
+                            new BasicDBObject("time",
+                                    new BasicDBObject("$lt",timestampDate))));
+            System.out.println(query);
+            MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTS).update(query,condition,false,true);
+        }
+    }
 }
