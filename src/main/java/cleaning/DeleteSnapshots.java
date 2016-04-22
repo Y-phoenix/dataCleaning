@@ -1,11 +1,16 @@
 package cleaning;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import common.MongoDAOUtil;
 import common.RangeBean;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +22,9 @@ import java.util.concurrent.Executors;
  */
 public class DeleteSnapshots {
     public static final int nThreads = 20;
+    public static final String DATE_STRING = "2015/12/01";
     public static final String THING_SNAPSHOTS = "path_thingSnapshots";
+    public static final String THING_SNAPSHOTSID = "path_thingSnapshotIds";
     public static final int numTransaction = 30;
 
     public static void main(String[] args) {
@@ -27,7 +34,8 @@ public class DeleteSnapshots {
         Boolean mongoInitialized = initMongo();
         if(mongoInitialized){
             try{
-                readFile();
+                //readFile();
+                executingDataCleaning();
             }catch (Exception e)
             {
                 e.printStackTrace();
@@ -48,6 +56,35 @@ public class DeleteSnapshots {
             e.printStackTrace();
         }
         return false;
+    }
+
+    private static void executingDataCleaning() throws Exception
+    {
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = formatter.parse(DATE_STRING);
+        Long timestampDate = date.getTime();
+
+        BasicDBObject query = new BasicDBObject("blinks",
+                new BasicDBObject("$elemMatch",
+                        new BasicDBObject("time",
+                                new BasicDBObject("$lt", timestampDate))));
+
+        DBCursor cursor = MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTSID).find(query);
+        while( cursor.hasNext() )
+        {
+            DBObject o = cursor.next();
+            BasicDBList blinks = (BasicDBList) o.get("blinks");
+            if(blinks!=null)
+            {
+                for (Object obj: blinks){
+
+                }
+            }
+        }
+
+        DeleteSnapshots data = new DeleteSnapshots();
+        data.removeSnapshots(stringDelete);
+
     }
 
     private static void readFile() throws Exception
