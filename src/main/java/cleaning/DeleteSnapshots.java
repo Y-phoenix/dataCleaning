@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
  */
 public class DeleteSnapshots {
     public static final int nThreads = 20;
-    public static final String DATE_STRING = "2015/12/01";
+    public static final String DATE_STRING = "01/01/2016";
     public static final String THING_SNAPSHOTS = "path_thingSnapshots";
     public static final String THING_SNAPSHOTSID = "path_thingSnapshotIds";
     public static final int numTransaction = 30;
@@ -48,45 +48,80 @@ public class DeleteSnapshots {
         System.out.println("Finished at: "+new Date());
     }
 
-    private static Boolean initMongo() {
-        try {
-            MongoDAOUtil.setupMongodb("localhost", 27017, "riot_main", null , null, "admin", "control123!");
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
     private static void executingDataCleaning() throws Exception
     {
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date date = formatter.parse(DATE_STRING);
         Long timestampDate = date.getTime();
 
+        List<List<Long>> global = new ArrayList<>();
+
+        System.out.println(date);
+        System.out.println(timestampDate);
         BasicDBObject query = new BasicDBObject("blinks",
                 new BasicDBObject("$elemMatch",
                         new BasicDBObject("time",
                                 new BasicDBObject("$lt", timestampDate))));
 
+        System.out.println(query);
         DBCursor cursor = MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTSID).find(query);
         while( cursor.hasNext() )
         {
+            List<Long> res = new ArrayList<>();
             DBObject o = cursor.next();
             BasicDBList blinks = (BasicDBList) o.get("blinks");
             if(blinks!=null)
             {
                 for (Object obj: blinks){
-
+                    BasicDBObject basicDBObject = (BasicDBObject) obj;
+                    if(((Long)basicDBObject.get("time")).compareTo(timestampDate)==-1){
+                        res.add((Long)basicDBObject.get("blink_id"));
+                    }
                 }
             }
+            global.add(res);
         }
-
-        DeleteSnapshots data = new DeleteSnapshots();
-        data.removeSnapshots(stringDelete);
-
+        if(global!=null && global.size()>0){
+            DeleteSnapshots data = new DeleteSnapshots();
+            data.removeSnapshotsOne(global);
+        }
     }
 
+    private void removeSnapshotsOne(List<List<Long>> global){
+        List<RangeBean> ranges = getRanges(global);
+        ExecutorService executor = Executors.newFixedThreadPool(nThreads);
+        for(RangeBean range : ranges){
+            List<List<Long>> subList = global.subList(range.getIni(),range.getEnd());
+            if(subList!=null) {
+                RunnableDeleteSnapshot runnable = new RunnableDeleteSnapshot(subList);
+                executor.execute(runnable);
+            }
+        }
+    }
+
+    private static List<RangeBean> getRanges(List<List<Long>> global){
+        int count  = global.size()/numTransaction;
+        int ini = 0;
+        int end = 0;
+        boolean rest = false;
+        List<RangeBean> ranges = new ArrayList<>();
+        for (int i = 1; i <= count ; i++) {
+            RangeBean range = new RangeBean(ini,end);
+            ranges.add(range);
+            ini = ini+numTransaction;
+            end = end+numTransaction;
+            if(end>global.size()){
+                end = (global.size()-(end-numTransaction))+(end-numTransaction);
+                rest = true;
+            }
+        }
+        if(rest)
+        {
+            RangeBean range = new RangeBean(ini,end);
+            ranges.add(range);
+        }
+        return ranges;
+    }
     private static void readFile() throws Exception
     {
         BufferedReader br = null;
@@ -157,26 +192,39 @@ public class DeleteSnapshots {
     }
 
     public class RunnableDeleteSnapshot implements Runnable {
-        List<List<Long>> idsLocal;
+        List<List<Long>> lstThings;
 
         public RunnableDeleteSnapshot(List<List<Long>> container) {
-            this.idsLocal = new ArrayList<>(container.size());
+            this.lstThings = new ArrayList<>(container.size());
             for(List<Long> longItems: container) {
                 List<Long> ids = new ArrayList<>();
                 for(Long data :longItems){
                     ids.add(data);
                 }
-                idsLocal.add(ids);
+                lstThings.add(ids);
             }
         }
+
         @Override
         public void run() {
-            for (List<Long> ids:idsLocal){
+            for (List<Long> ids: lstThings){
                 //System.out.println("chico "+ids);
                 BasicDBObject query = new BasicDBObject("_id",new BasicDBObject("$in",ids));
                 System.out.println(query);
-                MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTS).remove(query);
+                //MongoDAOUtil.getInstance().getCollection(THING_SNAPSHOTS).remove(query);
             }
         }
     }
+
+    private static Boolean initMongo() {
+        try {
+            MongoDAOUtil.setupMongodb("localhost", 27017, "riot_main", null , null, "admin", "control123!");
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 }

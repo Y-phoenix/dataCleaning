@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0756ba54-a034-4ad5-90ea-e4542e7cab70" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java" afterPath="$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dataCleaning.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +33,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <PATH>
@@ -41,6 +46,38 @@
               <PATH_ELEMENT>
                 <option name="myItemId" value="dataCleaning" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="dataCleaning" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="dataCleaning" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="other" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
           </tree_state>
@@ -66,10 +103,24 @@
       <file leaf-file-name="DeleteSnapshots.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4795181">
-              <caret line="75" column="45" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.571831">
+              <caret line="201" column="33" selection-start-line="201" selection-start-column="33" selection-end-line="201" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#readFile#0;class#DeleteSnapshots#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Long.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/lang/Long.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1232" column="23" selection-start-line="1232" selection-start-column="23" selection-end-line="1232" selection-end-column="23" />
+              <folding>
+                <element signature="e#46463#46464#0" expanded="true" />
+                <element signature="e#46524#46525#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,11 +212,6 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'dataCleaning'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="buildEnvironment" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildNeeded" />
@@ -176,7 +222,7 @@
                 <option name="name" value="check" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles main classes." />
+                <option name="description" value="Assembles classes 'main'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="classes" />
               </ExternalTaskPojo>
@@ -186,12 +232,12 @@
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Compiles main Java source." />
+                <option name="description" value="Compiles Java source 'main:java'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Compiles test Java source." />
+                <option name="description" value="Compiles Java source 'test:java'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileTestJava" />
               </ExternalTaskPojo>
@@ -240,12 +286,12 @@
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Processes main resources." />
+                <option name="description" value="Processes JVM resources 'main:resources'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Processes test resources." />
+                <option name="description" value="Processes JVM resources 'test:resources'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processTestResources" />
               </ExternalTaskPojo>
@@ -270,7 +316,7 @@
                 <option name="name" value="test" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles test classes." />
+                <option name="description" value="Assembles classes 'test'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="testClasses" />
               </ExternalTaskPojo>
@@ -286,11 +332,11 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="2922546490737" />
+        <entry key="$USER_HOME$/dev/mongotests" value="2918564798079" />
+        <entry key="$PROJECT_DIR$" value="2922582808716" />
         <entry key="$PROJECT_DIR$/../mongotests" value="2918563882824" />
         <entry key="$PROJECT_DIR$/../riot-core-bridges" value="2905217301285" />
         <entry key="$PROJECT_DIR$/../riot-core-services" value="10168255935090" />
-        <entry key="$USER_HOME$/dev/mongotests" value="2918564798079" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -333,119 +379,64 @@
               <option name="name" value="dataCleaning" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="/opt/gradle/latest/src/announce" />
-                  <option value="/opt/gradle/latest/src/antlr" />
-                  <option value="/opt/gradle/latest/src/base-services" />
-                  <option value="/opt/gradle/latest/src/base-services-groovy" />
-                  <option value="/opt/gradle/latest/src/build-comparison" />
-                  <option value="/opt/gradle/latest/src/build-init" />
-                  <option value="/opt/gradle/latest/src/cli" />
-                  <option value="/opt/gradle/latest/src/code-quality" />
-                  <option value="/opt/gradle/latest/src/core" />
-                  <option value="/opt/gradle/latest/src/dependency-management" />
-                  <option value="/opt/gradle/latest/src/diagnostics" />
-                  <option value="/opt/gradle/latest/src/ear" />
-                  <option value="/opt/gradle/latest/src/ide" />
-                  <option value="/opt/gradle/latest/src/ide-native" />
-                  <option value="/opt/gradle/latest/src/internal-integ-testing" />
-                  <option value="/opt/gradle/latest/src/internal-testing" />
-                  <option value="/opt/gradle/latest/src/ivy" />
-                  <option value="/opt/gradle/latest/src/jacoco" />
-                  <option value="/opt/gradle/latest/src/javascript" />
-                  <option value="/opt/gradle/latest/src/jetty" />
-                  <option value="/opt/gradle/latest/src/language-groovy" />
-                  <option value="/opt/gradle/latest/src/language-java" />
-                  <option value="/opt/gradle/latest/src/language-jvm" />
-                  <option value="/opt/gradle/latest/src/language-native" />
-                  <option value="/opt/gradle/latest/src/language-scala" />
-                  <option value="/opt/gradle/latest/src/launcher" />
-                  <option value="/opt/gradle/latest/src/maven" />
-                  <option value="/opt/gradle/latest/src/messaging" />
-                  <option value="/opt/gradle/latest/src/model-core" />
-                  <option value="/opt/gradle/latest/src/model-groovy" />
-                  <option value="/opt/gradle/latest/src/native" />
-                  <option value="/opt/gradle/latest/src/open-api" />
-                  <option value="/opt/gradle/latest/src/osgi" />
-                  <option value="/opt/gradle/latest/src/platform-base" />
-                  <option value="/opt/gradle/latest/src/platform-jvm" />
-                  <option value="/opt/gradle/latest/src/platform-native" />
-                  <option value="/opt/gradle/latest/src/platform-play" />
-                  <option value="/opt/gradle/latest/src/plugin-development" />
-                  <option value="/opt/gradle/latest/src/plugin-use" />
-                  <option value="/opt/gradle/latest/src/plugins" />
-                  <option value="/opt/gradle/latest/src/publish" />
-                  <option value="/opt/gradle/latest/src/reporting" />
-                  <option value="/opt/gradle/latest/src/resources" />
-                  <option value="/opt/gradle/latest/src/resources-http" />
-                  <option value="/opt/gradle/latest/src/resources-s3" />
-                  <option value="/opt/gradle/latest/src/resources-sftp" />
-                  <option value="/opt/gradle/latest/src/scala" />
-                  <option value="/opt/gradle/latest/src/signing" />
-                  <option value="/opt/gradle/latest/src/sonar" />
-                  <option value="/opt/gradle/latest/src/test-kit" />
-                  <option value="/opt/gradle/latest/src/testing-native" />
-                  <option value="/opt/gradle/latest/src/tooling-api" />
-                  <option value="/opt/gradle/latest/src/tooling-api-builders" />
-                  <option value="/opt/gradle/latest/src/ui" />
-                  <option value="/opt/gradle/latest/src/wrapper" />
-                  <option value="/opt/gradle/latest/lib/gradle-launcher-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-wrapper-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-base-services-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-core-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-cli-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-ui-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-tooling-api-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-native-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/groovy-all-2.4.4.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-model-core-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-model-groovy-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/ant-1.9.3.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-base-services-groovy-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-messaging-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-resources-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-docs-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/gradle-open-api-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/ant-launcher-1.9.3.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-plugins-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-code-quality-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-jetty-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-antlr-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-osgi-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-maven-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-ide-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-announce-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-scala-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-sonar-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-signing-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-ear-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-javascript-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-build-comparison-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-diagnostics-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-reporting-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-publish-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-ivy-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-jacoco-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-build-init-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-platform-base-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-platform-jvm-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-language-jvm-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-language-java-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-language-groovy-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-language-scala-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-platform-native-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-platform-play-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-language-native-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-ide-native-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-testing-native-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-plugin-development-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-plugin-use-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-resources-http-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-resources-sftp-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-resources-s3-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-tooling-api-builders-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-dependency-management-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/gradle-test-kit-2.10.jar" />
-                  <option value="/opt/gradle/latest/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="C:/gradle-2.7/lib/ant-1.9.3.jar" />
+                  <option value="C:/gradle-2.7/lib/ant-launcher-1.9.3.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-base-services-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-base-services-groovy-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-cli-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-core-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-docs-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-launcher-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-messaging-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-model-core-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-model-groovy-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-native-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-open-api-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-resources-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-tooling-api-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-ui-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/gradle-wrapper-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/groovy-all-2.3.10.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-announce-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-antlr-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-build-comparison-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-build-init-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-code-quality-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-dependency-management-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-diagnostics-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-ear-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-ide-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-ide-native-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-ivy-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-jacoco-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-javascript-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-jetty-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-language-groovy-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-language-java-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-language-jvm-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-language-native-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-language-scala-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-maven-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-osgi-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-platform-base-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-platform-jvm-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-platform-native-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-platform-play-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-plugin-development-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-plugin-use-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-plugins-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-publish-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-reporting-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-resources-http-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-resources-s3-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-resources-sftp-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-scala-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-signing-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-sonar-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-test-kit-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-testing-native-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/gradle-tooling-api-builders-2.7.jar" />
+                  <option value="C:/gradle-2.7/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -483,11 +474,14 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="28" />
-    <option name="width" value="1602" />
-    <option name="height" value="839" />
+    <option name="width" value="1370" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -510,10 +504,10 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -600,15 +594,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../riot-core-services" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -660,15 +655,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -690,15 +676,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -722,65 +699,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -898,62 +816,12 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="dataCleaning" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -998,40 +866,12 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
     </configuration>
@@ -1061,68 +901,91 @@
       <option name="number" value="Default" />
       <updated>1461267248722</updated>
       <workItem from="1461267251713" duration="11174000" />
+      <workItem from="1461291426695" duration="4099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11174000" />
+    <option name="totallyTimeSpent" value="15273000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1602" height="839" extended-state="6" />
+    <frame x="-1" y="28" width="1370" height="772" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24967742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14516129" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14503817" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java</url>
-          <line>140</line>
+          <line>175</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java</url>
-          <line>151</line>
+          <line>186</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java</url>
-          <line>123</line>
+          <line>158</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java</url>
+          <line>209</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1138,6 +1001,53 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readFile#0;class#DeleteSnapshots#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/MongoDAOUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="36" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="36" />
+          <folding>
+            <element signature="e#2115#2116#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/RangeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding>
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.13.0/3a86ea66cd451ac9e52dd6a8032c53bfaa0ebcc2/mongo-java-driver-2.13.0-sources.jar!/com/mongodb/DBCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325301">
@@ -1189,16 +1099,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4699739">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1232" column="23" selection-start-line="1232" selection-start-column="23" selection-end-line="1232" selection-end-column="23" />
+          <folding>
+            <element signature="e#46463#46464#0" expanded="true" />
+            <element signature="e#46524#46525#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cleaning/DeleteSnapshots.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4795181">
-          <caret line="75" column="45" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.571831">
+          <caret line="201" column="33" selection-start-line="201" selection-start-column="33" selection-end-line="201" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#readFile#0;class#DeleteSnapshots#0" expanded="false" />
           </folding>
         </state>
       </provider>
